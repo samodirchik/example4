@@ -1,0 +1,145 @@
+/* ==========================================================================
+   VAN CLINIC — DOCTORS ARCHIVE STYLESHEET (AJAX Filters, Sticky Bar, Responsive)
+   Файл: assets/css/doctors-archive.css
+   ========================================================================== */
+
+/* 1. ПАНЕЛЬ ФИЛЬТРОВ (STICKY НА ДЕСКТОПЕ) */
+.doctors-filter-bar {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+}
+
+@media (min-width: 992px) {
+  .doctors-filter-bar {
+    position: sticky;
+    top: 85px;
+    z-index: 90;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.95);
+  }
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .filter-grid {
+    grid-template-columns: 1.5fr 1fr 1fr auto;
+  }
+}
+
+.filter-select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1e293b;
+  background-color: #fff;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.filter-select:focus {
+  border-color: #0077b6;
+}
+
+.filter-radio-group {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+}
+.filter-radio-group label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* 2. СЕТКА КАРТОЧЕК */
+.doctors-results-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+@media (min-width: 640px) {
+  .doctors-results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .doctors-results-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Карточка не принимающего врача (fallback) */
+.doctor-card--inactive {
+  filter: grayscale(0.85);
+  opacity: 0.8;
+  position: relative;
+}
+.doctor-card--inactive::after {
+  content: "Прийом призупинено";
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+/* 3. ПУСТОЙ РЕЗУЛЬТАТ */
+.doctors-empty-state {
+  background: #f8fafc;
+  border: 2px dashed #cbd5e1;
+  border-radius: 14px;
+  padding: 50px 20px;
+  text-align: center;
+  margin: 30px 0;
+}
+.doctors-empty-state h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+.doctors-empty-state p {
+  color: #64748b;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+/* 4. КНОПКА ЗАГРУЗКИ ЕЩЕ */
+.load-more-wrap {
+  text-align: center;
+  margin-top: 40px;
+}
+.btn-load-more {
+  padding: 12px 32px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 8px;
+}
+.btn-load-more.is-loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+

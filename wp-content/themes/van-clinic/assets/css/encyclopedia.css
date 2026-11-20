@@ -1,0 +1,21 @@
+/**
+ * Стили для Медицинской энциклопедии (single-van_encyclopedia, archive-van_encyclopedia)
+ */
+.enc-chip:hover {
+    background: #0284c7 !important;
+    color: #ffffff !important;
+    border-color: #0284c7 !important;
+}
+
+.enc-alphabet-nav a:hover {
+    background: #0284c7 !important;
+    color: #ffffff !important;
+    border-color: #0284c7 !important;
+}
+
+.enc-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.06);
+    border-color: #bae6fd !important;
+}
+

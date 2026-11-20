@@ -1,0 +1,328 @@
+/* ==========================================================================
+   VAN CLINIC — ARTICLE STYLESHEET (E-E-A-T, TOC, Typography, Sources)
+   Файл: assets/css/article.css
+   ========================================================================== */
+
+/* 1. СЕТКА СТАТЬИ И САЙДБАР ОГЛАВЛЕНИЯ */
+.article-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+@media (min-width: 992px) {
+  .article-layout {
+    grid-template-columns: 300px minmax(0, 1fr);
+  }
+}
+
+/* 2. ОГЛАВЛЕНИЕ (TOC) */
+.article-toc {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 992px) {
+  .article-toc {
+    position: sticky;
+    top: 95px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    margin-bottom: 0;
+  }
+}
+
+.article-toc__summary {
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 16px;
+  color: #0f172a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  outline: none;
+}
+.article-toc__summary::-webkit-details-marker {
+  display: none;
+}
+.article-toc__toggle-icon::after {
+  content: "▾";
+  font-size: 16px;
+  color: #0077b6;
+}
+details:not([open]) .article-toc__toggle-icon::after {
+  content: "▸";
+}
+
+.article-toc__nav {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.toc-item--h3 {
+  padding-left: 14px;
+}
+
+.toc-link {
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.45;
+  display: block;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.toc-link:hover {
+  color: #0077b6;
+  background: #f1f5f9;
+}
+
+.toc-link.is-active {
+  color: #0077b6;
+  font-weight: 700;
+  background: #e0f2fe;
+  border-left: 3px solid #0077b6;
+}
+
+/* 3. E-E-A-T ПЛАШКА АВТОРА И РЕЦЕНЗЕНТА */
+.eeat-author-box {
+  margin: 28px 0 36px;
+}
+
+.eeat-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .eeat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.eeat-card {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.eeat-card--combined {
+  background: #f8fafc;
+  border: 1.5px solid #0077b6;
+}
+
+.eeat-card--reviewer {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.eeat-card--warning {
+  background: #fffbeb;
+  border-color: #fde68a;
+  display: block;
+}
+
+.eeat-card__avatar img {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e2e8f0;
+}
+
+.eeat-card__placeholder {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: #e0f2fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+}
+
+.eeat-card__name {
+  font-size: 16px;
+  font-weight: 800;
+  margin: 4px 0 2px;
+}
+
+.eeat-card__name a {
+  color: #0f172a;
+}
+.eeat-card__name a:hover {
+  color: #0077b6;
+}
+
+.eeat-card__role {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 2px;
+}
+
+.eeat-card__date {
+  font-size: 12px;
+  color: #15803d;
+  font-weight: 600;
+  display: block;
+}
+
+.eeat-badges-wrap {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.eeat-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.eeat-badge--author {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.eeat-badge--verified {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* 4. PROSE ТИПОГРАФИКА ДЛЯ ТЕЛА СТАТЬИ */
+.article-content__body {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #1e293b;
+}
+
+.article-content__body h2 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 36px 0 16px;
+  scroll-margin-top: 90px;
+}
+
+.article-content__body h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 28px 0 12px;
+  scroll-margin-top: 90px;
+}
+
+.article-content__body p {
+  margin-bottom: 20px;
+}
+
+.article-content__body ul, .article-content__body ol {
+  margin: 0 0 24px 24px;
+}
+
+.article-content__body li {
+  margin-bottom: 8px;
+}
+
+.article-content__body blockquote {
+  border-left: 4px solid #0077b6;
+  background: #f8fafc;
+  padding: 16px 20px;
+  font-style: italic;
+  margin: 24px 0;
+  border-radius: 0 8px 8px 0;
+  color: #334155;
+}
+
+.article-content__body img {
+  border-radius: 12px;
+  margin: 24px auto;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+/* Адаптивные таблицы внутри статей */
+.table-wrapper {
+  overflow-x: auto;
+  margin: 24px 0;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-wrapper th, .table-wrapper td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.table-wrapper th {
+  background: #f8fafc;
+  font-weight: 700;
+}
+
+/* 5. ИСТОЧНИКИ И ПРОТОКОЛЫ */
+.article-sources {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 40px 0;
+}
+.article-sources h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 14px;
+}
+.article-sources ol {
+  margin-left: 20px;
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.8;
+}
+.article-sources a {
+  color: #0077b6;
+  text-decoration: underline;
+  word-break: break-all;
+}
+
+/* 6. ДИСКЛЕЙМЕР */
+.article-disclaimer {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 10px;
+  padding: 16px 20px;
+  font-size: 13px;
+  color: #92400e;
+  line-height: 1.6;
+  margin: 40px 0;
+  text-align: center;
+}
+

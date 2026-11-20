@@ -1,0 +1,305 @@
+/**
+ * Стили для юридических страниц, О клинике и Контактов
+ * Файл: assets/css/legal-pages.css
+ */
+
+/* ==========================================================================
+   PAGE: ПРО КЛІНІКУ (page-about.php)
+   ========================================================================== */
+.about-hero {
+    background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+    padding: var(--space-8, 2.5rem) 0;
+    border-bottom: 1px solid var(--color-border, #e2e8f0);
+}
+
+.about-stats-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 1.75rem;
+    margin: 2.5rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.about-stat-item {
+    text-align: center;
+}
+
+.about-stat-num {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #0284c7;
+    line-height: 1.1;
+    margin-bottom: 0.25rem;
+}
+
+.about-stat-label {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+/* Лицензия МОЗ */
+.about-license-card {
+    background: #f8fafc;
+    border: 2px solid #bae6fd;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+@media (min-width: 768px) {
+    .about-license-card {
+        grid-template-columns: 1.2fr 0.8fr;
+    }
+}
+
+.about-license-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #e0f2fe;
+    color: #0369a1;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.about-license-details dt {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 0.75rem;
+}
+
+.about-license-details dd {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0.15rem 0 0 0;
+}
+
+.about-license-scan {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    background: #ffffff;
+    padding: 8px;
+    border: 1px solid #cbd5e1;
+    text-align: center;
+}
+
+.about-license-scan img {
+    width: 100%;
+    height: auto;
+    max-height: 320px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Ценности клиники */
+.about-values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.about-value-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: transform 0.2s ease;
+}
+
+.about-value-card:hover {
+    transform: translateY(-2px);
+    border-color: #bae6fd;
+}
+
+/* ==========================================================================
+   PAGE: КОНТАКТИ (page-contacts.php)
+   ========================================================================== */
+.contacts-branches-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+    .contacts-branches-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.contact-branch-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.contact-branch-card__title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 0.75rem;
+}
+
+.contact-branch-card__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    color: #334155;
+}
+
+.contact-branch-card__item svg {
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+    color: #0284c7;
+}
+
+.contact-branch-card__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+/* Карта филиалов */
+.contacts-map-box {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    background: #e2e8f0;
+    min-height: 400px;
+    margin-bottom: 3rem;
+}
+
+.contacts-map-cover {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(248, 250, 252, 0.95);
+    z-index: 2;
+    cursor: pointer;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Форма обратной связи */
+.contact-form-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 680px;
+    margin: 0 auto;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form-group {
+    margin-bottom: 1.25rem;
+}
+
+.contact-form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.35rem;
+}
+
+.contact-form-control {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+    background: #ffffff;
+}
+
+.contact-form-control:focus {
+    border-color: #0284c7;
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+/* ==========================================================================
+   PAGE: PRIVACY / CONSENT (page-privacy.php, page-consent.php)
+   ========================================================================== */
+.legal-page-container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2.5rem 1rem;
+}
+
+.legal-modified-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #f1f5f9;
+    color: #475569;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.legal-toc {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.legal-toc__title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.75rem;
+}
+
+.legal-toc__list {
+    list-style: decimal;
+    padding-left: 1.25rem;
+    margin: 0;
+    font-size: 0.925rem;
+    line-height: 1.7;
+}
+
+.legal-toc__list a {
+    color: #0284c7;
+    text-decoration: none;
+}
+
+.legal-toc__list a:hover {
+    text-decoration: underline;
+}
+

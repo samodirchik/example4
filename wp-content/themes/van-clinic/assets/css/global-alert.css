@@ -1,0 +1,121 @@
+/**
+ * Global Alert Banner (Military / Emergency / Working Hours)
+ * Apple-style minimalist alert bar
+ * Core Web Vitals: CLS = 0 (min-height, zero layout shifting)
+ */
+
+.van-global-alert {
+  min-height: 48px;
+  padding: 12px 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #FFFFFF;
+  position: relative;
+  z-index: 1000;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.van-global-alert--info    { background: #0071E3; }
+.van-global-alert--warning { background: #FF9500; color: #1D1D1F; }
+.van-global-alert--danger  { background: #FF3B30; }
+
+.van-global-alert__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+.van-global-alert__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.van-global-alert__text {
+  flex: 1;
+  min-width: 0;
+  font-weight: 500;
+}
+
+.van-global-alert__link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  margin-left: 8px;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.van-global-alert__link:hover {
+  text-decoration-thickness: 2px;
+}
+
+.van-global-alert__close {
+  flex-shrink: 0;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  padding: 4px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+.van-global-alert__close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.van-global-alert--warning .van-global-alert__close:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .van-global-alert {
+    padding: 10px 0;
+    font-size: 13px;
+  }
+  .van-global-alert__inner {
+    padding: 0 16px;
+    gap: 10px;
+  }
+  .van-global-alert__text {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .van-global-alert__link {
+    margin-left: 4px;
+  }
+  .van-global-alert__close {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* Print */
+@media print {
+  .van-global-alert { display: none !important; }
+}
+
+/* При скрытии */
+.van-global-alert[hidden] {
+  display: none !important;
+}
+
